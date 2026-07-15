@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #F9FAFB;
+  --foreground: #0F172A;
+  
+  /* Brand colors */
+  --brand-yellow: #FFD000;
+  
+  /* Pastel theme colors (light mode defaults) */
+  --pastel-purple: #DCD0FF;
+  --pastel-pink: #FCE7F3;
+  --pastel-teal: #CCFBF1;
+  --pastel-yellow: #FEF08A;
+  --pastel-orange: #FFEDD5;
+  --pastel-blue: #BAE6FD;
+  --pastel-lime: #ECFDF5;
+  --pastel-green: #DCFCE7;
+  --pastel-gray: #F3F4F6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0B0F19;
+    --foreground: #F8FAFC;
+    
+    /* Dark mode pastel variants (slightly more saturated/darker backgrounds for contrast) */
+    --pastel-purple: #4C1D95;
+    --pastel-pink: #831843;
+    --pastel-teal: #115E59;
+    --pastel-yellow: #78350F;
+    --pastel-orange: #7C2D12;
+    --pastel-blue: #0369A1;
+    --pastel-lime: #065F46;
+    --pastel-green: #166534;
+    --pastel-gray: #1E293B;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-mono: var(--font-mono), monospace;
+  
+  --color-brand-yellow: var(--brand-yellow);
+  
+  --color-pastel-purple: var(--pastel-purple);
+  --color-pastel-pink: var(--pastel-pink);
+  --color-pastel-teal: var(--pastel-teal);
+  --color-pastel-yellow: var(--pastel-yellow);
+  --color-pastel-orange: var(--pastel-orange);
+  --color-pastel-blue: var(--pastel-blue);
+  --color-pastel-lime: var(--pastel-lime);
+  --color-pastel-green: var(--pastel-green);
+  --color-pastel-gray: var(--pastel-gray);
+  
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-float-medium: float-medium 6s ease-in-out infinite;
+  --animate-float-fast: float-fast 4s ease-in-out infinite;
 }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-12px) rotate(-1deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 3px solid var(--background);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+

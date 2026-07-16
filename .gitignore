@@ -43,3 +43,7 @@ next-env.d.ts
 # lockfile bypass
 package-lock.json
 
+# cloudflare open-next / wrangler builds
+.open-next/
+.wrangler/
+.next/

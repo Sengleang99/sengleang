@@ -89,7 +89,31 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Card 2: Professional Experience */}
+          {/* Card 2: Education */}
+          <motion.div
+            variants={cardVariants}
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-white/40 dark:bg-slate-950/20 backdrop-blur-sm shadow-sm"
+          >
+            <h3 className="text-sm font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">
+              02. Education
+            </h3>
+            <div className="space-y-4">
+              {/* Education 1 */}
+              <div className="border-l-2 border-brand-yellow pl-4 py-0.5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                  <h4 className="font-serif text-base font-semibold text-slate-900 dark:text-white">
+                    Associate of Software Engineering
+                  </h4>
+                  <span className="text-[10px] font-mono text-slate-500 dark:text-slate-450">
+                    Beltei International University (2022-2024)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 3: Professional Experience */}
           <motion.div
             variants={cardVariants}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}

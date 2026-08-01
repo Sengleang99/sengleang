@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
 import { getUserToken } from "./utils/user-token";
 import { mapStatusCodeToException } from "./errors/error-mapper";
 import ApiResponse from "@/types/ApiResponse";

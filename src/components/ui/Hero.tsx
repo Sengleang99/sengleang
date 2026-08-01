@@ -118,48 +118,6 @@ export default function Hero() {
           </span>
         ))}
       </motion.div>
-
-      {/* Interactive Action Buttons (CTAs) */}
-      <motion.div
-        variants={childVariants}
-        className="flex flex-wrap items-center justify-center gap-4"
-      >
-        <button
-          onClick={() => scrollTo("work")}
-          className="group flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/10 dark:hover:shadow-white/10 hover:-translate-y-0.5 cursor-pointer"
-        >
-          <span>Explore Selected Work</span>
-          <svg
-            className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </button>
-
-        <button
-          onClick={() => scrollTo("contact")}
-          className="flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 font-medium text-sm transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:-translate-y-0.5 shadow-sm cursor-pointer"
-        >
-          <svg
-            className="w-4 h-4 text-slate-500"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-            />
-          </svg>
-          <span>Get in Touch</span>
-        </button>
-      </motion.div>
     </motion.section>
   );
 }

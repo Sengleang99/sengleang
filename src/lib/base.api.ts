@@ -9,6 +9,10 @@ const buildJsonHeaders = async (includeToken: boolean): Promise<Headers> => {
     "Content-Type": "application/json",
   });
 
+  if (process.env.X_API_KEY) {
+    reqHeaders.set("x-api-key", process.env.X_API_KEY);
+  }
+
   if (includeToken) {
     const token = await getUserToken();
     if (token) reqHeaders.set("Authorization", `Bearer ${token}`);

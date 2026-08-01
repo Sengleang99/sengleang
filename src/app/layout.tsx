@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import {
+  Playfair_Display,
+  Plus_Jakarta_Sans,
+  Geist_Mono,
+} from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -20,7 +24,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Seng Leang | Software Engineer Portfolio",
-  description: "I build software that feels simple, even when it's not. Software engineering portfolio highlighting full-stack projects, system design, and performant user interfaces.",
+  description:
+    "I build software that feels simple, even when it's not. Software engineering portfolio highlighting full-stack projects, system design, and performant user interfaces.",
 };
 
 export default function RootLayout({
@@ -39,4 +44,3 @@ export default function RootLayout({
     </html>
   );
 }
-

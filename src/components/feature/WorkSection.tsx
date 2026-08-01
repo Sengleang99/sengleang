@@ -42,7 +42,10 @@ const cardVariants = {
 
 export default function WorkSection() {
   return (
-    <section id="work" className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80">
+    <section
+      id="work"
+      className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80"
+    >
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -72,7 +75,10 @@ export default function WorkSection() {
             <motion.div
               key={project.id}
               variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+              whileHover={{
+                y: -6,
+                transition: { duration: 0.25, ease: "easeOut" },
+              }}
               className={`flex flex-col justify-between p-6 md:p-8 rounded-3xl border ${project.color} ${project.borderAccent} transition-colors duration-300 hover:shadow-md group relative overflow-hidden`}
             >
               <div>
@@ -116,7 +122,12 @@ export default function WorkSection() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors duration-250"
                   >
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      className="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         fillRule="evenodd"
                         clipRule="evenodd"
@@ -132,8 +143,19 @@ export default function WorkSection() {
                     className="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors duration-250"
                   >
                     <span>Launch</span>
-                    <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    <svg
+                      className="h-3 w-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -169,11 +191,12 @@ export default function WorkSection() {
             Case Studies Under Construction
           </h3>
           <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md">
-            I am currently refactoring and packaging my production codebase archives. Selected engineering projects and system architecture schematics will be published here shortly.
+            I am currently refactoring and packaging my production codebase
+            archives. Selected engineering projects and system architecture
+            schematics will be published here shortly.
           </p>
         </motion.div>
       )}
     </section>
   );
 }
-

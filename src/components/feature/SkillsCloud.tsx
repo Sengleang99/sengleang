@@ -19,7 +19,8 @@ const INITIAL_SKILLS: SkillBadge[] = [
     id: 1,
     label: "TESTING",
     emoji: "✎",
-    colorClass: "bg-pastel-purple hover:bg-indigo-300 dark:hover:bg-indigo-700/80",
+    colorClass:
+      "bg-pastel-purple hover:bg-indigo-300 dark:hover:bg-indigo-700/80",
     textClass: "text-indigo-950 dark:text-indigo-100",
     rotate: -4,
     animationClass: "animate-float-slow",
@@ -39,7 +40,8 @@ const INITIAL_SKILLS: SkillBadge[] = [
     id: 3,
     label: "REFRAMING PROBLEMS",
     emoji: "♯",
-    colorClass: "bg-pastel-teal hover:bg-emerald-300 dark:hover:bg-emerald-700/80",
+    colorClass:
+      "bg-pastel-teal hover:bg-emerald-300 dark:hover:bg-emerald-700/80",
     textClass: "text-emerald-950 dark:text-emerald-100",
     rotate: -1.5,
     animationClass: "animate-float-fast",
@@ -49,7 +51,8 @@ const INITIAL_SKILLS: SkillBadge[] = [
     id: 4,
     label: "IMPROVING UX",
     emoji: "☺",
-    colorClass: "bg-pastel-yellow hover:bg-yellow-300 dark:hover:bg-yellow-700/80",
+    colorClass:
+      "bg-pastel-yellow hover:bg-yellow-300 dark:hover:bg-yellow-700/80",
     textClass: "text-amber-950 dark:text-amber-100",
     rotate: 6,
     animationClass: "animate-float-slow",
@@ -59,7 +62,8 @@ const INITIAL_SKILLS: SkillBadge[] = [
     id: 5,
     label: "MAKING IT POP",
     emoji: "🖌",
-    colorClass: "bg-pastel-orange hover:bg-orange-300 dark:hover:bg-orange-700/80",
+    colorClass:
+      "bg-pastel-orange hover:bg-orange-300 dark:hover:bg-orange-700/80",
     textClass: "text-orange-950 dark:text-orange-100",
     rotate: -3,
     animationClass: "animate-float-medium",
@@ -99,7 +103,8 @@ const INITIAL_SKILLS: SkillBadge[] = [
     id: 9,
     label: "SECURE APIs",
     emoji: "🛡",
-    colorClass: "bg-red-100 hover:bg-red-200 dark:bg-red-950/40 dark:hover:bg-red-900/60",
+    colorClass:
+      "bg-red-100 hover:bg-red-200 dark:bg-red-950/40 dark:hover:bg-red-900/60",
     textClass: "text-red-950 dark:text-red-200",
     rotate: -2,
     animationClass: "animate-float-fast",
@@ -171,7 +176,9 @@ export default function SkillsCloud() {
                 `}
               >
                 <span>{skill.label}</span>
-                <span className="text-base leading-none select-none">{skill.emoji}</span>
+                <span className="text-base leading-none select-none">
+                  {skill.emoji}
+                </span>
               </div>
             </motion.div>
           );
@@ -180,4 +187,3 @@ export default function SkillsCloud() {
     </div>
   );
 }
-

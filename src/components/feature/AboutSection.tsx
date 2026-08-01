@@ -26,7 +26,7 @@ const cardVariants = {
 
 const EDUCATIONS = [
   {
-    id: '1',
+    id: "1",
     title: "Associate of Software Engineering",
     description: "Beltei International University (2022-2024)",
     year: "2022-2024",
@@ -35,24 +35,29 @@ const EDUCATIONS = [
 
 const EXPERIENCES = [
   {
-    id: '1',
+    id: "1",
     title: "Mobile App Developer",
     company: "Samrith Ek",
-    description: "Engineered native and cross-platform mobile products, optimizing interfaces and modular codebases for reliability and speed.",
+    description:
+      "Engineered native and cross-platform mobile products, optimizing interfaces and modular codebases for reliability and speed.",
     year: "2025 - 2026",
   },
   {
-    id: '2',
+    id: "2",
     title: "Application Support & Developer (Internship)",
     company: "Postcar Digital",
-    description: "Maintained applications, analyzed runtime diagnostics, and coded full-stack enhancements to resolve active operational needs.",
+    description:
+      "Maintained applications, analyzed runtime diagnostics, and coded full-stack enhancements to resolve active operational needs.",
     year: "2024 - 2024",
   },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80">
+    <section
+      id="about"
+      className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80"
+    >
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left Column: Heading */}
@@ -70,7 +75,13 @@ export default function AboutSection() {
             Curious mind, methodical execution.
           </h2>
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-400 text-justify font-normal">
-            Energetic and detail-oriented Software Developer with professional experience in mobile and web application development (Flutter, Vue.js, Next.js). Proven track record of building cross-platform applications, integrating RESTful APIs, and optimizing database interactions. A strong problem solver skilled in UI/UX prototyping with Figma and agile team collaboration, eager to drive technical   solutions in a dynamic growth environment.
+            Energetic and detail-oriented Software Developer with professional
+            experience in mobile and web application development (Flutter,
+            Vue.js, Next.js). Proven track record of building cross-platform
+            applications, integrating RESTful APIs, and optimizing database
+            interactions. A strong problem solver skilled in UI/UX prototyping
+            with Figma and agile team collaboration, eager to drive technical
+            solutions in a dynamic growth environment.
           </p>
         </motion.div>
 
@@ -95,8 +106,11 @@ export default function AboutSection() {
               {EDUCATIONS.map((edu, index) => (
                 <div
                   key={edu.id}
-                  className={`border-l-2 ${index === 0 ? "border-brand-yellow" : "border-slate-200 dark:border-slate-800"
-                    } pl-4 py-0.5`}
+                  className={`border-l-2 ${
+                    index === 0
+                      ? "border-brand-yellow"
+                      : "border-slate-200 dark:border-slate-800"
+                  } pl-4 py-0.5`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
                     <h4 className="font-serif text-base font-semibold text-slate-900 dark:text-white">
@@ -127,8 +141,11 @@ export default function AboutSection() {
               {EXPERIENCES.map((exp, index) => (
                 <div
                   key={exp.id}
-                  className={`border-l-2 ${index === 0 ? "border-brand-yellow" : "border-slate-200 dark:border-slate-800"
-                    } pl-4 py-0.5`}
+                  className={`border-l-2 ${
+                    index === 0
+                      ? "border-brand-yellow"
+                      : "border-slate-200 dark:border-slate-800"
+                  } pl-4 py-0.5`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
                     <h4 className="font-serif text-base font-semibold text-slate-900 dark:text-white">
@@ -155,5 +172,3 @@ export default function AboutSection() {
     </section>
   );
 }
-
-

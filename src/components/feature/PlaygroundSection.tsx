@@ -36,7 +36,10 @@ export default function PlaygroundSection() {
   };
 
   return (
-    <section id="playground" className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80">
+    <section
+      id="playground"
+      className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80"
+    >
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -52,7 +55,8 @@ export default function PlaygroundSection() {
           The Design Engine Playground
         </h2>
         <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xl">
-          A sandboxed interactive lab built to preview design configurations and dynamic styling variables on the fly.
+          A sandboxed interactive lab built to preview design configurations and
+          dynamic styling variables on the fly.
         </p>
       </motion.div>
 
@@ -96,8 +100,12 @@ export default function PlaygroundSection() {
             {/* Slider 1: Blur */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="font-medium text-slate-400 uppercase tracking-wider">Backdrop Blur</span>
-                <span className="text-slate-700 dark:text-slate-350">{blur}px</span>
+                <span className="font-medium text-slate-400 uppercase tracking-wider">
+                  Backdrop Blur
+                </span>
+                <span className="text-slate-700 dark:text-slate-350">
+                  {blur}px
+                </span>
               </div>
               <input
                 type="range"
@@ -112,8 +120,12 @@ export default function PlaygroundSection() {
             {/* Slider 2: Opacity */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="font-medium text-slate-400 uppercase tracking-wider">Color Opacity</span>
-                <span className="text-slate-700 dark:text-slate-350">{opacity}%</span>
+                <span className="font-medium text-slate-400 uppercase tracking-wider">
+                  Color Opacity
+                </span>
+                <span className="text-slate-700 dark:text-slate-350">
+                  {opacity}%
+                </span>
               </div>
               <input
                 type="range"
@@ -128,8 +140,12 @@ export default function PlaygroundSection() {
             {/* Slider 3: Border Radius */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="font-medium text-slate-400 uppercase tracking-wider">Rounding Corners</span>
-                <span className="text-slate-700 dark:text-slate-350">{radius}px</span>
+                <span className="font-medium text-slate-400 uppercase tracking-wider">
+                  Rounding Corners
+                </span>
+                <span className="text-slate-700 dark:text-slate-350">
+                  {radius}px
+                </span>
               </div>
               <input
                 type="range"
@@ -171,9 +187,12 @@ export default function PlaygroundSection() {
             className="w-full max-w-sm p-6 md:p-8 shadow-lg relative z-10 block dark:hidden select-none transition-all duration-300 border border-white/40"
           >
             <div className="h-3 w-12 rounded-full bg-slate-350/50 mb-6" />
-            <h4 className="font-serif text-lg text-slate-900 mb-2">Dynamic Render Card</h4>
+            <h4 className="font-serif text-lg text-slate-900 mb-2">
+              Dynamic Render Card
+            </h4>
             <p className="text-xs text-slate-600 leading-relaxed mb-6">
-              Adjust sliders to watch this glassmorphic card live-compile colors, backdrop filters, and edge rounding variables.
+              Adjust sliders to watch this glassmorphic card live-compile
+              colors, backdrop filters, and edge rounding variables.
             </p>
             <div className="flex justify-between items-center">
               <div className="h-6 w-16 rounded bg-slate-300/40" />
@@ -186,9 +205,12 @@ export default function PlaygroundSection() {
             className="w-full max-w-sm p-6 md:p-8 shadow-2xl relative z-10 hidden dark:block select-none transition-all duration-300"
           >
             <div className="h-3 w-12 rounded-full bg-slate-700/50 mb-6" />
-            <h4 className="font-serif text-lg text-white mb-2">Dynamic Render Card</h4>
+            <h4 className="font-serif text-lg text-white mb-2">
+              Dynamic Render Card
+            </h4>
             <p className="text-xs text-slate-300 leading-relaxed mb-6">
-              Adjust sliders to watch this glassmorphic card live-compile colors, backdrop filters, and edge rounding variables.
+              Adjust sliders to watch this glassmorphic card live-compile
+              colors, backdrop filters, and edge rounding variables.
             </p>
             <div className="flex justify-between items-center">
               <div className="h-6 w-16 rounded bg-slate-800/40" />
@@ -200,5 +222,3 @@ export default function PlaygroundSection() {
     </section>
   );
 }
-
-

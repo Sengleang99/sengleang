@@ -27,13 +27,6 @@ const childVariants = {
 };
 
 export default function Hero() {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <motion.section
       id="hero"
@@ -69,7 +62,9 @@ export default function Hero() {
           <span className="text-xs font-semibold text-slate-900 dark:text-white tracking-wide">
             Seng Leang
           </span>
-          <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
+          <span className="hidden sm:inline text-slate-300 dark:text-slate-700">
+            •
+          </span>
           <span className="text-[11px] sm:text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
             Software Engineer & UX/UI Designer
           </span>
@@ -101,7 +96,8 @@ export default function Hero() {
         <span className="font-semibold text-slate-900 dark:text-white">
           Flutter
         </span>
-        , and robust backend architectures. Dedicated to clean code, performance, and intuitive user experiences.
+        , and robust backend architectures. Dedicated to clean code,
+        performance, and intuitive user experiences.
       </motion.p>
 
       {/* Tech Knowledge Pills */}
@@ -109,7 +105,14 @@ export default function Hero() {
         variants={childVariants}
         className="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-mono"
       >
-        {["Next.js", "TypeScript", "Flutter", "Express.js", "MySQL & MongoDB", "Figma"].map((tech) => (
+        {[
+          "Next.js",
+          "TypeScript",
+          "Flutter",
+          "Express.js",
+          "MySQL & MongoDB",
+          "Figma",
+        ].map((tech) => (
           <span
             key={tech}
             className="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 transition-colors hover:border-slate-400 dark:hover:border-slate-500"

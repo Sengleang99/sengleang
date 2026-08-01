@@ -20,13 +20,13 @@ const buildJsonHeaders = async (includeToken: boolean): Promise<Headers> => {
 const fetcher = async <T>(
   path: string,
   next?: NextFetchRequestConfig | undefined,
-  { tag }: { tag?: string[] } = {},
+  options?: { tag?: string[] },
   { includeToken = true }: { includeToken?: boolean } = {},
 ): Promise<T> => {
   const reqHeaders = await buildJsonHeaders(includeToken);
   const response = await fetch(`${process.env.BACKEND_API_BASE_URL}${path}`, {
     headers: reqHeaders,
-    next: next,
+    next: options?.tag ? { ...next, tags: options.tag } : next,
   });
 
   if (!response.ok) {
@@ -41,10 +41,9 @@ const poster = async <T>(
   path: string,
   body: object,
   includeToken: boolean = true,
-  { tag }: { tag?: string[] } = {},
 ): Promise<ApiResponse<T>> => {
   const reqHeaders = await buildJsonHeaders(includeToken);
-  const response = await fetch(`$process.env.BACKEND_API_BASE_URL}${path}`, {
+  const response = await fetch(`${process.env.BACKEND_API_BASE_URL}${path}`, {
     method: "POST",
     headers: reqHeaders,
     body: JSON.stringify(body),
@@ -62,7 +61,6 @@ const updater = async <T>(
   path: string,
   body: object,
   includeToken: boolean = true,
-  { tag }: { tag?: string[] } = {},
 ): Promise<ApiResponse<T>> => {
   const reqHeaders = await buildJsonHeaders(includeToken);
   const response = await fetch(`${process.env.BACKEND_API_BASE_URL}${path}`, {

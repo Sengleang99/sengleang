@@ -4,10 +4,18 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -27,7 +35,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80">
+    <section
+      id="contact"
+      className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800/80"
+    >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
         {/* Left column: Text */}
         <motion.div
@@ -44,7 +55,9 @@ export default function ContactForm() {
             Let&apos;s contact each other.
           </h2>
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
-            I’m always open to new challenges and collaborations. If you’d like to discuss a project, explore potential opportunities, or simply want to say hello, feel free to reach out using the form.
+            I’m always open to new challenges and collaborations. If you’d like
+            to discuss a project, explore potential opportunities, or simply
+            want to say hello, feel free to reach out using the form.
           </p>
         </motion.div>
 
@@ -149,5 +162,3 @@ export default function ContactForm() {
     </section>
   );
 }
-
-

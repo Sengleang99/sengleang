@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { submitContact } from "@/services/contact.service";
+import { Contact } from "@/types/contact";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -25,13 +28,32 @@ export default function ContactForm() {
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Simulate API call for form submission
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 4000);
-    }, 1200);
+    try {
+      const payload: Contact = {
+        username: formData.name,
+        email: formData.email,
+        message: formData.message,
+      };
+
+      const result = await submitContact(payload);
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(
+          result.error || "Failed to submit message. Please try again.",
+        );
+      }
+    } catch (err: unknown) {
+      console.error("Form submission error:", err);
+      setStatus("error");
+      setErrorMessage("An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
@@ -152,7 +174,7 @@ export default function ContactForm() {
 
               {status === "error" && (
                 <span className="text-xs font-mono font-semibold text-rose-600 dark:text-rose-450 bg-rose-50 dark:bg-rose-950/20 px-3.5 py-1.5 rounded-full border border-rose-100 dark:border-rose-900/30">
-                  ✗ An error occurred. Please try again.
+                  ✗ {errorMessage || "An error occurred. Please try again."}
                 </span>
               )}
             </div>
